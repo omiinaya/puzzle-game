@@ -1,3 +1,9 @@
+// Convert grid coordinates to flat array index
+function index(i, j) {
+  if (i < 0 || j < 0 || i >= cols || j >= rows) return -1;
+  return j * cols + i;
+}
+
 function Cell(i, j) {
   this.i = i;
   this.j = j;
@@ -5,12 +11,12 @@ function Cell(i, j) {
   this.id = i * cols + (j + 1);
 
   this.randomNeighbor = function () {
-    var neighbors = [];
+    let neighbors = [];
 
-    var top = grid[index(i, j - 1)];
-    var right = grid[index(i + 1, j)];
-    var bottom = grid[index(i, j + 1)];
-    var left = grid[index(i - 1, j)];
+    let top = grid[index(i, j - 1)];
+    let right = grid[index(i + 1, j)];
+    let bottom = grid[index(i, j + 1)];
+    let left = grid[index(i - 1, j)];
 
     if (this.walls[0] && top) {
       neighbors.push(top);
@@ -26,7 +32,7 @@ function Cell(i, j) {
     }
 
     if (neighbors.length > 0) {
-      var r = floor(random(0, neighbors.length));
+      let r = floor(random(0, neighbors.length));
       return neighbors[r];
     } else {
       return undefined;
@@ -35,16 +41,16 @@ function Cell(i, j) {
   }
 
   this.topNeighbor = function () {
-    var neighbors = [];
+    let neighbors = [];
 
-    var top = grid[index(i, j - 1)];
+    let top = grid[index(i, j - 1)];
   
     if (this.walls[0] && top) {
       neighbors.push(top);
     }
 
     if (neighbors.length > 0) {
-      var r = floor(random(0, neighbors.length));
+      let r = floor(random(0, neighbors.length));
       return neighbors[r];
     } else {
       return undefined;
@@ -53,16 +59,16 @@ function Cell(i, j) {
 
 
   this.rightNeighbor = function () {
-    var neighbors = [];
+    let neighbors = [];
 
-    var right = grid[index(i + 1, j)];
+    let right = grid[index(i + 1, j)];
   
     if (this.walls[1] && right) {
       neighbors.push(right);
     }
 
     if (neighbors.length > 0) {
-      var r = floor(random(0, neighbors.length));
+      let r = floor(random(0, neighbors.length));
       return neighbors[r];
     } else {
       return undefined;
@@ -70,16 +76,16 @@ function Cell(i, j) {
   }
 
   this.bottomNeighbor = function () {
-    var neighbors = [];
+    let neighbors = [];
 
-    var bottom = grid[index(i, j + 1)];
+    let bottom = grid[index(i, j + 1)];
   
     if (this.walls[2] && bottom) {
       neighbors.push(bottom);
     }
 
     if (neighbors.length > 0) {
-      var r = floor(random(0, neighbors.length));
+      let r = floor(random(0, neighbors.length));
       return neighbors[r];
     } else {
       return undefined;
@@ -87,16 +93,16 @@ function Cell(i, j) {
   }
 
   this.leftNeighbor = function () {
-    var neighbors = [];
+    let neighbors = [];
 
-    var left = grid[index(i - 1, j)];
+    let left = grid[index(i - 1, j)];
   
     if (this.walls[3] && left) {
       neighbors.push(left);
     }
 
     if (neighbors.length > 0) {
-      var r = floor(random(0, neighbors.length));
+      let r = floor(random(0, neighbors.length));
       return neighbors[r];
     } else {
       return undefined;
@@ -105,8 +111,8 @@ function Cell(i, j) {
 
 
   this.highlight = function (isRed) {
-    var x = this.i * w;
-    var y = this.j * w;
+    let x = this.i * w;
+    let y = this.j * w;
     noStroke();
     isRed ? fill('red') : fill(0, 0, 255, 100);
     isRed ? rect(x + 2, y + 2, w - 4, w - 4) : rect(x, y, w, w);
@@ -114,8 +120,8 @@ function Cell(i, j) {
   }
 
   this.show = function () {
-    var x = this.i * w;
-    var y = this.j * w;
+    let x = this.i * w;
+    let y = this.j * w;
     stroke(255);
     if (this.walls[0]) {
       line(x, y, x + w, y);

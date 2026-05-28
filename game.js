@@ -1,10 +1,10 @@
-var cols, rows;                                                     //inititing cols and rows
-var w = 40;                                                         //width of each cell
-var grid = [];                                                      //grid object
-var sets = [];                                                      //still no clue what sets does exactly but it works
-var cursorX = 0;                                                    //starting x coordinate of player
-var cursorY = 0;                                                    //starting y coordinate of player
-var selected;                                                       //variable that holds current player position
+let cols, rows;                                                     //inititing cols and rows
+let w = 40;                                                         //width of each cell
+let grid = [];                                                      //grid object
+let sets = [];                                                      //still no clue what sets does exactly but it works
+let cursorX = 0;                                                    //starting x coordinate of player
+let cursorY = 0;                                                    //starting y coordinate of player
+let selected;                                                       //variable that holds current player position
 
 function setup() {
   createCanvas(600, 600);                                           //initiate a canvas with width and hegiht
@@ -13,14 +13,14 @@ function setup() {
 
   for (var j = 0; j < rows; j++) {                                  //for loop runs 15 times to create 15 rows
     for (var i = 0; i < cols; i++) {                                //for loop runs 15 times to create 15 cols
-      var cell = new Cell(i, j);                                    //class that defines the cell
+      let cell = new Cell(i, j);                                    //class that defines the cell
       grid.push(cell);                                              //pushing cell to grid
       sets.push([cell.id])                                          //pushing cell.ids to sets
     }
   }
 }
 
-var layout = [                                                      //variable that holds our map
+let layout = [                                                      //variable that holds our map
 //01  02  03  04  05  06  07  08  09  10  11  12  13  14  15
   11, 01, 01, 08, 01, 01, 01, 08, 01, 01, 01, 08, 01, 01, 02, //01
   12, 11, 02, 12, 15, 14, 03, 12, 15, 14, 03, 12, 15, 02, 12, //02
@@ -40,7 +40,7 @@ var layout = [                                                      //variable t
 ]
 
 //currently placeholder
-var candies = [                                                       //variable that will hold our candies
+let candies = [                                                       //variable that will hold our candies
 //01  02  03  04  05  06  07  08  09  10  11  12  13  14  15
   11, 01, 01, 08, 01, 01, 01, 08, 01, 01, 01, 08, 01, 01, 02, //01
   12, 11, 02, 12, 15, 14, 03, 12, 15, 14, 03, 12, 15, 02, 12, //02
@@ -196,7 +196,7 @@ function reset() {
   sets = [];
   for (var j = 0; j < rows; j++) {
     for (var i = 0; i < cols; i++) {
-      var cell = new Cell(i, j);
+      let cell = new Cell(i, j);
       grid.push(cell);
       sets.push([cell.id])
     }
