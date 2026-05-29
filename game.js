@@ -11,8 +11,8 @@ function setup() {
   cols = floor(width / w);                                          //defining columns = 300/20 = 15
   rows = floor(height / w);                                         //defining rows = 300/20 = 15
 
-  for (var j = 0; j < rows; j++) {                                  //for loop runs 15 times to create 15 rows
-    for (var i = 0; i < cols; i++) {                                //for loop runs 15 times to create 15 cols
+  for (let j = 0; j < rows; j++) {                                  //for loop runs 15 times to create 15 rows
+    for (let i = 0; i < cols; i++) {                                //for loop runs 15 times to create 15 cols
       let cell = new Cell(i, j);                                    //class that defines the cell
       grid.push(cell);                                              //pushing cell to grid
       sets.push([cell.id])                                          //pushing cell.ids to sets
@@ -61,7 +61,7 @@ let candies = [                                                       //variable
 
 function draw() {
   background("#000000");                          //sets background black
-  for (var i = 0; i < grid.length; i++) {         //for every element in the grid...
+  for (let i = 0; i < grid.length; i++) {         //for every element in the grid...
     grid[i].show();                               //draw grid
 
     //order: top, right, bottom, left
@@ -194,8 +194,8 @@ function reset() {
   cursorX = 0;
   cursorY = 0;
   sets = [];
-  for (var j = 0; j < rows; j++) {
-    for (var i = 0; i < cols; i++) {
+  for (let j = 0; j < rows; j++) {
+    for (let i = 0; i < cols; i++) {
       let cell = new Cell(i, j);
       grid.push(cell);
       sets.push([cell.id])
