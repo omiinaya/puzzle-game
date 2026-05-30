@@ -67,87 +67,87 @@ function draw() {
     //order: top, right, bottom, left
 
     //top, bottom
-    if (layout[i] == 01) {
+    if (layout[i] === 01) {
       grid[i].walls = [true, false, true, false]
     }
 
     //top, right
-    else if (layout[i] == 02) {
+    else if (layout[i] === 02) {
       grid[i].walls = [true, true, false, false]
     }
 
     //top, right, bottom
-    else if (layout[i] == 03) {
+    else if (layout[i] === 03) {
       grid[i].walls = [true, true, true, false]
     }
 
     //top, right, bottom, left
-    else if (layout[i] == 04) {
+    else if (layout[i] === 04) {
       grid[i].walls = [true, true, true, true]
     }
 
     //right, bottom, left
-    else if (layout[i] == 05) {
+    else if (layout[i] === 05) {
       grid[i].walls = [false, true, true, true]
     }
 
     //bottom, left
-    else if (layout[i] == 06) {
+    else if (layout[i] === 06) {
       grid[i].walls = [false, false, true, true]
     }
 
     //left
-    else if (layout[i] == 07) {
+    else if (layout[i] === 07) {
       grid[i].walls = [false, false, false, true]
     }
 
     //no walls
-    else if (layout[i] == 08) {
+    else if (layout[i] === 08) {
       grid[i].walls = [false, false, false, false]
     }
 
     //right
-    else if (layout[i] == 09) {
+    else if (layout[i] === 09) {
       grid[i].walls = [false, true, false, false]
     }
 
     //bottom
-    else if (layout[i] == 10) {
+    else if (layout[i] === 10) {
       grid[i].walls = [false, false, true, false]
     }
 
     //top, left
-    else if (layout[i] == 11) {
+    else if (layout[i] === 11) {
       grid[i].walls = [true, false, false, true]
     }
 
     //right, left
-    else if (layout[i] == 12) {
+    else if (layout[i] === 12) {
       grid[i].walls = [false, true, false, true]
     }
 
     //right, bottom
-    else if (layout[i] == 13) {
+    else if (layout[i] === 13) {
       grid[i].walls = [false, true, true, false]
     }
 
     //top, bottom
-    else if (layout[i] == 14) {
+    else if (layout[i] === 14) {
       grid[i].walls = [true, false, true, false]
     }
 
     //top, bottom, left
-    else if (layout[i] == 15) {
+    else if (layout[i] === 15) {
       grid[i].walls = [true, false, true, true]
     }
 
     //top, right, left
-    else if (layout[i] == 16) {
+    else if (layout[i] === 16) {
       grid[i].walls = [true, true, false, true]
     }
 
     //top
-    else if (layout[i] == 17) {
+    else if (layout[i] === 17) {
       grid[i].walls = [true, false, false, false]
     }
   }

@@ -114,9 +114,13 @@ function Cell(i, j) {
     let x = this.i * w;
     let y = this.j * w;
     noStroke();
-    isRed ? fill('red') : fill(0, 0, 255, 100);
-    isRed ? rect(x + 2, y + 2, w - 4, w - 4) : rect(x, y, w, w);
-
+    if (isRed) {
+      fill('red');
+      rect(x + 2, y + 2, w - 4, w - 4);
+    } else {
+      fill(0, 0, 255, 100);
+      rect(x, y, w, w);
+    }
   }
 
   this.show = function () {
