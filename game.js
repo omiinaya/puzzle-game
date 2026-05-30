@@ -142,28 +142,24 @@ function draw() {
 
 
 function keyPressed() {
-  if (key == 'R' || key == 'r') {
+  if (key === 'R' || key === 'r') {
     cursorX = 0;
     cursorY = 0;
   }
-  else if ((key == 'W' || key == 'w') && cursorY > 0) {
+  else if ((key === 'W' || key === 'w') && cursorY > 0) {
     if (!selected.walls[0]) {
-      console.log(selected)
       cursorY--;
     }
-  } else if ((key == 'A' || key == 'a') && cursorX > 0) {
+  } else if ((key === 'A' || key === 'a') && cursorX > 0) {
     if (!selected.walls[3]) {
-      console.log(selected)
       cursorX--;
     }
-  } else if ((key == 'S' || key == 's') && cursorY < rows - 1) {
+  } else if ((key === 'S' || key === 's') && cursorY < rows - 1) {
     if (!selected.walls[2]) {
-      console.log(selected)
       cursorY++;
     }
-  } else if ((key == 'D' || key == 'd') && cursorX < cols - 1) {
+  } else if ((key === 'D' || key === 'd') && cursorX < cols - 1) {
     if (!selected.walls[1]) {
-      console.log(selected)
       cursorX++;
     }
   }
